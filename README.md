@@ -1,4 +1,4 @@
-# BlueCruise Live Vehicle Testing
+# BlueCruise Live Vehicle Manuever Animations
 
 This repository contains tools and scripts for analyzing BlueCruise live vehicle testing data. The main components include a Jupyter Notebook for identifying vehicle dynamics and a Python script for generating animations of specific maneuvers.
 
@@ -13,12 +13,20 @@ This repository contains tools and scripts for analyzing BlueCruise live vehicle
 - [Data](#data)
 - [Output](#output)
 
+## Simple Comand Line Commands
+
+- `cd <repository-directory>`: change to the repository directory
+- `cd ..`: change to the parent directory
+- `ls`: list files in the current directory
+- `pwd`: print working directory
+
 ## Setup
 
 1. **Clone the Repository**:
+    First change to the directory where you want to clone the repository
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/DonavenLobo/GatechxFord-Near-Miss-Maneuver-Animations.git
+   cd https://github.com/DonavenLobo/GatechxFord-Near-Miss-Maneuver-Animations.git
    ```
 
 2. **Ensure you have Python 3.9 or later installed**. You can check your Python version with:

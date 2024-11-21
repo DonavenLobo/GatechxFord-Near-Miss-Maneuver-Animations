@@ -80,6 +80,7 @@ pip install -r requirements.txt
      ```bash
      python scripts/BC_LiveVehicleTesting_ManueverAnimations.py
      ```
+   - Enter the trip number when prompted (1 [Ayyan] or 2 [Isabel])
    - Enter the start and end timestamps when prompted.
 
 2. **Output**:

@@ -12,12 +12,26 @@ def get_manuever():
     """
     Get a specific manuever from the live vehicle testing data based on user input time.
     """
-    df_bc = pd.read_csv(r'C:\Users\donav\OneDrive - Georgia Institute of Technology\Current Work\data\bc_livedata_colleen_nov11_tripnum.csv')
+    # Prompt user for which trip to load
+    # Trip from 10:45 to 11:15 --> trip_num = 1 (Ayyan)
+    # Trip from 11:50 to 12:30 --> trip_num = 2 (Isabel)
+    while True:
+        trip_num = input("Enter the trip number (1 [Ayyan] or 2 [Isabel]): ")
+        if trip_num in ['1', '2']:
+            break
+        else:
+            print("Invalid trip number. Please try again.")
+
+    if trip_num == '1':
+        trip1_df = pd.read_csv('data/trip1_data_mike_Nov15.csv')
+    elif trip_num == '2':
+        trip1_df = pd.read_csv('data/trip2_data_mike_Nov15.csv')
+
     
     # Convert 'date_time' to datetime format and remove timezone information
-    df_bc['date_time'] = pd.to_datetime(df_bc['date_time']).dt.tz_localize(None)
+    trip1_df['date_time'] = pd.to_datetime(trip1_df['date_time']).dt.tz_localize(None)
     
-    trip1_df = df_bc[df_bc['trip_num'] == 2]
+
     min_time = trip1_df['date_time'].min()
     max_time = trip1_df['date_time'].max()
 
@@ -119,12 +133,12 @@ if __name__ == '__main__':
     ani = FuncAnimation(fig, update, frames=len(complete_time_range), interval=1000/10)
 
     # Save the animation as a GIF
-    if not os.path.exists('gifs'):
-        os.makedirs('gifs')
+    if not os.path.exists('scripts/gifs'):
+        os.makedirs('scripts/gifs')
     # Format the file name with the start and end times
     start_time_str = manuever['date_time'].iloc[0].strftime('%Y-%m-%d_%H-%M-%S')
     end_time_str = manuever['date_time'].iloc[-1].strftime('%Y-%m-%d_%H-%M-%S')
-    file_name = f'gifs/vehicle_dynamics_animation_{start_time_str}_{end_time_str}.gif'
+    file_name = f'scripts/gifs/vehicle_dynamics_animation_{start_time_str}_{end_time_str}.gif'
     ani.save(file_name, writer='pillow', dpi=100)
 
 

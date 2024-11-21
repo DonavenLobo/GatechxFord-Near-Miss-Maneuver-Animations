@@ -58,6 +58,26 @@ Once the virtual environment is activated, install the required packages using t
 pip install -r requirements.txt
 ```
 
+## Project Structure (ASCII)
+```
+BlueCruise_LiveVehicleTesting/
+│
+├── .gitignore
+├── README.md
+├── requirements.txt
+│
+├── data/
+│   ├── trip1_data_mike_Nov15.csv
+│   └── trip2_data_mike_Nov15.csv
+│
+├── scripts/
+│   ├── BC_LiveVehicleTesting_ManueverAnimations.py
+│   └── gifs/
+│
+├── BlueCruise_LiveVehicleTesting_Manuevers_Ayyan.ipynb
+└── BlueCruise_LiveVehicleTesting_Manuevers_Isabel.ipynb
+```
+
 ## Usage
 
 ### Identifying Vehicle Dynamics
